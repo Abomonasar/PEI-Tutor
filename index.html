@@ -18,6 +18,11 @@
       padding: 1rem;
       text-align: center;
     }
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
     nav {
       background: #0066cc;
       padding: 0.5rem;
@@ -53,6 +58,33 @@
       list-style: square;
       padding-left: 1.2rem;
     }
+    blockquote {
+      font-style: italic;
+      color: #333;
+      border-left: 5px solid #004080;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #003366;
+    }
   </style>
 </head>
 <body>
@@ -65,6 +97,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -92,12 +125,36 @@
     <p>Monthly Package (8 ninety-minute sessions): $250 CAD</p>
   </section>
 
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <blockquote>“Amin helped my daughter raise her math grade from 65% to 90% in just three months. Highly recommended!” — Parent</blockquote>
+    <blockquote>“Explains clearly, very patient, and always on time. I finally enjoy math!” — Grade 10 Student</blockquote>
+    <blockquote>“Best tutor I’ve ever had. Flexible schedule and focused lessons.” — Grade 11 Student</blockquote>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: amin@amintutors.ca</p>
     <p>Phone/WhatsApp: +1-XXX-XXX-XXXX</p>
     <p>Location: Charlottetown, PEI</p>
-    <a href="mailto:amin@amintutors.ca" class="cta">Book a Free Consultation</a>
+
+    <form action="mailto:amin@amintutors.ca" method="post" enctype="text/plain">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="grade">Student's Grade:</label>
+      <input type="text" id="grade" name="grade">
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <a href="mailto:amin@amintutors.ca" class="cta">Or Book a Free Consultation</a>
   </section>
 
   <footer>

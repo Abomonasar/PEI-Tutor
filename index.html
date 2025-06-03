@@ -13,6 +13,7 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background-image: url('header-bg.png');
       background-size: cover;
@@ -21,43 +22,46 @@
       padding: 4rem 1rem;
       text-align: center;
     }
-    footer {
-      background-color: #004080;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+
     header h1 {
       font-size: 3rem;
       font-weight: bold;
       margin: 0.5rem 0;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
+
     nav {
       background: #0066cc;
       padding: 0.5rem;
       text-align: center;
     }
+
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
       border-radius: 5px;
     }
+
     h1, h2 {
       color: #004080;
     }
+
     .pricing-card {
       background: #eef6ff;
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 8px;
     }
+
     blockquote {
       font-style: italic;
       color: #333;
@@ -65,11 +69,13 @@
       padding-left: 1rem;
       margin: 1rem 0;
     }
+
     iframe {
       border: none;
       width: 100%;
       height: 1020px;
     }
+
     hr {
       border: none;
       border-top: 1px solid #ccc;
@@ -77,62 +83,75 @@
       max-width: 900px;
     }
 
-    /* Table Styling */
+    footer {
+      background-color: #004080;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
     .availability-table {
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
-      text-align: center;
       border-collapse: collapse;
       font-size: 1.1rem;
     }
+
     .availability-table th,
     .availability-table td {
       border: 1px solid #ccc;
       padding: 10px;
+      text-align: center;
     }
+
     .availability-table thead {
       background-color: #004080;
       color: white;
     }
-    .available {
-      color: green;
-      font-weight: bold;
-    }
+
     .reserved {
       color: orange;
       font-weight: bold;
     }
 
-    /* Responsive Styling */
-    @media screen and (max-width: 600px) {
-      .availability-table {
-        border: none;
-      }
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
       .availability-table thead {
         display: none;
       }
-      .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
+
+      .availability-table,
+      .availability-table tbody,
+      .availability-table tr,
+      .availability-table td {
         display: block;
         width: 100%;
       }
+
       .availability-table tr {
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        border: 2px solid #004080;
+        border-radius: 8px;
+        overflow: hidden;
       }
+
       .availability-table td {
         text-align: left;
-        padding: 10px;
-        border: none;
-        border-bottom: 1px solid #eee;
+        padding: 1rem;
+        position: relative;
       }
-      .availability-table td:first-child {
-        background-color: #004080;
-        color: white;
+
+      .availability-table td::before {
+        content: attr(data-label);
+        display: block;
         font-weight: bold;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        color: #004080;
+        margin-bottom: 0.5rem;
       }
     }
   </style>
@@ -177,17 +196,21 @@
 
   <section id="pricing" style="background-color: #ffffff;">
     <h2>💰 Pricing</h2>
+
     <div class="pricing-card">
       <p><strong>First-time Trial (1.5 hr):</strong> <span style="color:#004080;">Free</span></p>
     </div>
+
     <div class="pricing-card">
       <p><strong>1.5-hour session:</strong> $37.50 CAD  
       <br><small>(Based on the standard hourly rate of $25)</small></p>
     </div>
+
     <div class="pricing-card">
       <p><strong>Monthly Package (4×1.5hr):</strong> $150 CAD  
       <br><small>Includes 6 hours of personalized tutoring per month.</small></p>
     </div>
+
     <p>Extra sessions available upon request at regular session rates.</p>
     <p><em>Cancellations require 24 hours notice to avoid a charge.</em></p>
   </section>
@@ -206,7 +229,7 @@
   <section id="availability" style="background-color: #ffffff;">
     <h2>🗓️ Weekly Availability</h2>
     <p>Below is my weekly tutoring schedule. To request a session, please fill out the <a href="#contact">contact form</a>. I will respond within 24 hours to confirm your time.</p>
-    
+
     <table class="availability-table">
       <thead>
         <tr>
@@ -217,31 +240,29 @@
       </thead>
       <tbody>
         <tr>
-          <td>Monday</td>
-          <td>
+          <td data-label="Day">Monday</td>
+          <td data-label="Time Slot(s)">
             5:00 – 6:30 PM <span class="reserved">🚫 Reserved</span><br>
             6:45 – 8:15 PM <span class="available">✅ Available</span>
           </td>
-          <td>📍 Charlottetown Learning Centre</td>
+          <td data-label="Location">📍 Charlottetown Learning Centre</td>
         </tr>
         <tr>
-          <td>Tuesday</td>
-          <td>6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
-          <td>📍 Stratford Public Library</td>
+          <td data-label="Day">Tuesday</td>
+          <td data-label="Time Slot(s)">6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
+          <td data-label="Location">📍 Stratford Public Library</td>
         </tr>
         <tr>
-          <td>Wednesday</td>
-          <td>6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
-          <td>📍 Stratford Public Library</td>
+          <td data-label="Day">Wednesday</td>
+          <td data-label="Time Slot(s)">6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
+          <td data-label="Location">📍 Stratford Public Library</td>
         </tr>
       </tbody>
     </table>
 
     <p style="margin-top: 1rem; text-align:center;"><em>Legend: ✅ Available | 🚫 Reserved | 📍 Location</em></p>
     <p style="margin-top: 1rem; text-align:center;"><em>Sessions are usually held in public libraries in Stratford and Charlottetown. Other days and times may be available by appointment — please inquire via the contact form.</em></p>
-
     <p style="margin-top: 1rem; text-align:center;"><em>Most students attend one session per week, which allows for consistent progress. Extra sessions can be arranged as needed for tests, reviews, or additional support.</em></p>
-
     <p style="margin-top: 1rem; text-align:center;"><em>I offer 1.5-hour sessions to ensure enough time for concept mastery, guided practice, and meaningful progress. This format has proven most effective for math success.</em></p>
   </section>
 

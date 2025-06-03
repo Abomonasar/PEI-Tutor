@@ -76,6 +76,58 @@
       margin: 2rem auto;
       max-width: 900px;
     }
+
+    /* Table styling */
+    .availability-table {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+    }
+    .availability-table th, .availability-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .availability-table thead {
+      background-color: #004080;
+      color: white;
+    }
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+    .reserved {
+      color: orange;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      .availability-table thead {
+        display: none;
+      }
+      .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
+        display: block;
+        width: 100%;
+      }
+      .availability-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+      .availability-table td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+      .availability-table td:last-child {
+        border-bottom: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -118,21 +170,15 @@
 
   <section id="pricing" style="background-color: #ffffff;">
     <h2>💰 Pricing</h2>
-
     <div class="pricing-card">
       <p><strong>First-time Trial (1.5 hr):</strong> <span style="color:#004080;">Free</span></p>
     </div>
-
     <div class="pricing-card">
-      <p><strong>1.5-hour session:</strong> $37.50 CAD  
-      <br><small>(At $25/hour)</small></p>
+      <p><strong>1.5-hour session:</strong> $37.50 CAD<br><small>(At $25/hour)</small></p>
     </div>
-
     <div class="pricing-card">
-      <p><strong>Monthly Package (4×1.5hr):</strong> $150 CAD  
-      <br><small>Includes 6 hours of personalized tutoring per month. This reflects the standard rate of $25/hour with no discount.</small></p>
+      <p><strong>Monthly Package (4×1.5hr):</strong> $150 CAD<br><small>Includes 6 hours of personalized tutoring per month. This reflects the standard rate of $25/hour with no discount.</small></p>
     </div>
-
     <p>Extra sessions available upon request at regular session rates.</p>
     <p><em>Cancellations require 24 hours notice to avoid a charge.</em></p>
   </section>
@@ -152,8 +198,8 @@
     <h2>🗓️ Weekly Availability</h2>
     <p>Below is my weekly tutoring schedule. To request a session, please fill out the <a href="#contact">contact form</a>. I will respond within 24 hours to confirm your time.</p>
     
-    <table border="1" cellpadding="10" style="width:100%; max-width:700px; margin:auto; text-align:center; border-collapse: collapse; font-size: 1.1rem;">
-      <thead style="background-color:#004080; color:white;">
+    <table class="availability-table">
+      <thead>
         <tr>
           <th>Day</th>
           <th>Time Slot(s)</th>
@@ -164,29 +210,26 @@
         <tr>
           <td>Monday</td>
           <td>
-            5:00 PM – 6:30 PM <strong style="color:orange;">(Reserved)</strong><br>
-            6:45 PM – 8:15 PM <strong style="color:green;">(Available)</strong>
+            5:00 – 6:30 PM <span class="reserved">🚫 Reserved</span><br>
+            6:45 – 8:15 PM <span class="available">✅ Available</span>
           </td>
-          <td>Charlottetown Learning Centre</td>
+          <td>📍 Charlottetown Learning Centre</td>
         </tr>
         <tr>
           <td>Tuesday</td>
-          <td>6:00 PM – 7:30 PM <strong style="color:orange;">(Reserved)</strong></td>
-          <td>Stratford Public Library</td>
+          <td>6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
+          <td>📍 Stratford Public Library</td>
         </tr>
         <tr>
           <td>Wednesday</td>
-          <td>6:00 PM – 7:30 PM <strong style="color:orange;">(Reserved)</strong></td>
-          <td>Stratford Public Library</td>
+          <td>6:00 – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
+          <td>📍 Stratford Public Library</td>
         </tr>
       </tbody>
     </table>
 
-    <p style="margin-top: 1rem; text-align:center;"><em>Sessions are usually held in public libraries in Charlottetown and Stratford. Other days and times may be available by appointment — please inquire via the contact form.</em></p>
-
-    <p style="margin-top: 1rem; text-align:center;"><em>Most students attend one session per week, which allows for consistent progress. Extra sessions can be arranged as needed for tests, reviews, or additional support.</em></p>
-
-    <p style="margin-top: 1rem; text-align:center;"><em>I offer 1.5-hour sessions to ensure enough time for concept mastery, guided practice, and meaningful progress. This format has proven most effective for math success.</em></p>
+    <p style="margin-top: 1rem; text-align:center;"><em>Sessions are held in Charlottetown or Stratford libraries. Other times available upon request.</em></p>
+    <p style="margin-top: 1rem; text-align:center;"><em>Legend: ✅ Available | 🚫 Reserved | 📍 Location</em></p>
   </section>
 
   <hr>

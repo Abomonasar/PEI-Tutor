@@ -52,6 +52,9 @@
     h1, h2 {
       color: #004080;
     }
+    header h1, header p {
+      color: #f4f4f4;
+    }
     .pricing-card {
       background: #eef6ff;
       padding: 1rem;
@@ -75,66 +78,6 @@
       border-top: 1px solid #ccc;
       margin: 2rem auto;
       max-width: 900px;
-    }
-
-    /* Table Styling */
-    .availability-table {
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
-      text-align: center;
-      border-collapse: collapse;
-      font-size: 1.1rem;
-    }
-    .availability-table th,
-    .availability-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    .availability-table thead {
-      background-color: #004080;
-      color: white;
-    }
-    .available {
-      color: green;
-      font-weight: bold;
-    }
-    .reserved {
-      color: orange;
-      font-weight: bold;
-    }
-
-    /* Responsive Styling */
-    @media screen and (max-width: 600px) {
-      .availability-table {
-        border: none;
-      }
-      .availability-table thead {
-        display: none;
-      }
-      .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
-        display: block;
-        width: 100%;
-      }
-      .availability-table tr {
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #fff;
-      }
-      .availability-table td {
-        text-align: left;
-        padding: 10px;
-        border: none;
-        border-bottom: 1px solid #eee;
-      }
-      .availability-table td:first-child {
-        background-color: #004080;
-        color: white;
-        font-weight: bold;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
     }
   </style>
 </head>

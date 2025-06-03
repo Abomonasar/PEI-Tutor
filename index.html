@@ -52,9 +52,6 @@
     h1, h2 {
       color: #004080;
     }
-    header h1, header p {
-      color: #f4f4f4;
-    }
     .pricing-card {
       background: #eef6ff;
       padding: 1rem;
@@ -78,6 +75,65 @@
       border-top: 1px solid #ccc;
       margin: 2rem auto;
       max-width: 900px;
+    }
+
+    /* Table Styling */
+    .availability-table {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      border-collapse: collapse;
+      font-size: 1.1rem;
+    }
+    .availability-table th,
+    .availability-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .availability-table thead {
+      background-color: #004080;
+      color: white;
+    }
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+    .reserved {
+      color: orange;
+      font-weight: bold;
+    }
+
+    /* Responsive Styling */
+    @media screen and (max-width: 600px) {
+      .availability-table {
+        border: none;
+      }
+      .availability-table thead {
+        display: none;
+      }
+      .availability-table, .availability-table tbody, .availability-table tr, .availability-table td {
+        display: block;
+        width: 100%;
+      }
+      .availability-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .availability-table td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+      .availability-table td:first-child {
+        background-color: #004080;
+        color: white;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
     }
   </style>
 </head>
@@ -119,25 +175,21 @@
 
   <hr>
 
- <section id="pricing" style="background-color: #ffffff;">
-  <h2>💰 Pricing</h2>
-
-  <div class="pricing-card">
-    <p><strong>First-time Trial (1.5 hr):</strong> <span style="color:#004080;">Free</span></p>
-  </div>
-
-  <div class="pricing-card">
-    <p><strong>1.5-hour session:</strong> $37.50 CAD  
-    <br><small>(Based on the standard hourly rate of $25)</small></p>
-  </div>
-
-  <div class="pricing-card">
-    <p><strong>Monthly Package (4×1.5hr):</strong> $150 CAD  
-    <br><small>Includes 6 hours of personalized tutoring per month.</small></p>
-  </div>
-
-  <p>Extra sessions available upon request at regular session rates.</p>
-  <p><em>Cancellations require 24 hours notice to avoid a charge.</em></p>
+  <section id="pricing" style="background-color: #ffffff;">
+    <h2>💰 Pricing</h2>
+    <div class="pricing-card">
+      <p><strong>First-time Trial (1.5 hr):</strong> <span style="color:#004080;">Free</span></p>
+    </div>
+    <div class="pricing-card">
+      <p><strong>1.5-hour session:</strong> $37.50 CAD  
+      <br><small>(Based on the standard hourly rate of $25)</small></p>
+    </div>
+    <div class="pricing-card">
+      <p><strong>Monthly Package (4×1.5hr):</strong> $150 CAD  
+      <br><small>Includes 6 hours of personalized tutoring per month.</small></p>
+    </div>
+    <p>Extra sessions available upon request at regular session rates.</p>
+    <p><em>Cancellations require 24 hours notice to avoid a charge.</em></p>
   </section>
 
   <hr>

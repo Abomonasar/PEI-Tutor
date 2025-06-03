@@ -77,7 +77,7 @@
       max-width: 900px;
     }
 
-    /* Table styling */
+    /* Table Styling */
     .availability-table {
       width: 100%;
       max-width: 700px;
@@ -86,7 +86,8 @@
       border-collapse: collapse;
       font-size: 1.1rem;
     }
-    .availability-table th, .availability-table td {
+    .availability-table th,
+    .availability-table td {
       border: 1px solid #ccc;
       padding: 10px;
     }
@@ -103,8 +104,11 @@
       font-weight: bold;
     }
 
-    /* Responsive */
+    /* Responsive Styling */
     @media screen and (max-width: 600px) {
+      .availability-table {
+        border: none;
+      }
       .availability-table thead {
         display: none;
       }
@@ -124,8 +128,12 @@
         border: none;
         border-bottom: 1px solid #eee;
       }
-      .availability-table td:last-child {
-        border-bottom: none;
+      .availability-table td:first-child {
+        background-color: #004080;
+        color: white;
+        font-weight: bold;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
     }
   </style>
@@ -228,8 +236,8 @@
       </tbody>
     </table>
 
-    <p style="margin-top: 1rem; text-align:center;"><em>Sessions are held in Charlottetown or Stratford libraries. Other times available upon request.</em></p>
     <p style="margin-top: 1rem; text-align:center;"><em>Legend: ✅ Available | 🚫 Reserved | 📍 Location</em></p>
+    <p style="margin-top: 1rem; text-align:center;"><em>Sessions are held in Charlottetown and Stratford libraries. Other times available by request.</em></p>
   </section>
 
   <hr>

@@ -78,89 +78,84 @@
       margin: 2rem auto;
       max-width: 900px;
     }
-    .availability-table {
+    #availability-table {
       width: 100%;
+      max-width: 800px;
+      margin: auto;
       border-collapse: collapse;
       font-size: 1.1rem;
-      overflow-x: auto;
     }
-    .availability-table th, .availability-table td {
+    #availability-table th, #availability-table td {
       border: 1px solid #ccc;
       padding: 10px;
       text-align: center;
     }
-    .availability-table thead {
+    #availability-table thead {
       background-color: #004080;
       color: white;
     }
-    .reserved {
-      font-weight: bold;
-      color: orange;
+    #availability-table tbody tr:nth-child(odd) {
+      background-color: #f9fbff;
     }
-    .available {
-      font-weight: bold;
+    #availability-table tbody tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+    .status-available {
       color: green;
+      font-weight: bold;
     }
-    @media (max-width: 600px) {
-      .availability-table, .availability-table thead, .availability-table tbody, .availability-table th, .availability-table td, .availability-table tr {
-        display: block;
-        width: 100%;
-      }
-      .availability-table thead tr {
-        display: none;
-      }
-      .availability-table td {
-        text-align: left;
-        padding-left: 50%;
-        position: relative;
-      }
-      .availability-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-      }
+    .status-reserved {
+      color: orange;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <!-- Header, Navigation, About, Services, Pricing, Testimonials sections omitted for brevity -->  <section id="availability" style="background-color: #ffffff;">
+  <section id="availability" style="background-color: #ffffff;">
     <h2>🗓️ Weekly Availability</h2>
-    <p>Below is my weekly tutoring schedule. To request a session, please fill out the <a href="#contact">contact form</a>. I will respond within 24 hours to confirm your time.</p><table class="availability-table">
+    <p>Below is my weekly tutoring schedule. To request a session, please fill out the <a href="#contact">contact form</a>. I will respond within 24 hours to confirm your time.</p><table id="availability-table">
   <thead>
     <tr>
       <th>Day</th>
-      <th>Available Time Slot(s)</th>
+      <th>Time</th>
+      <th>Status</th>
       <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-label="Day">Monday</td>
-      <td data-label="Time">
-        5:00 PM – 6:30 PM <span class="reserved">🚫 Reserved</span><br>
-        6:45 PM – 8:15 PM <span class="available">✅ Available</span>
-      </td>
-      <td data-label="Location">📍 Charlottetown Learning Centre</td>
+      <td>Monday</td>
+      <td>5:00 PM – 6:30 PM</td>
+      <td><span class="status-reserved">Reserved</span></td>
+      <td>Charlottetown Learning Centre</td>
     </tr>
     <tr>
-      <td data-label="Day">Tuesday</td>
-      <td data-label="Time">6:00 PM – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
-      <td data-label="Location">📍 Stratford Public Library</td>
+      <td>Monday</td>
+      <td>6:45 PM – 8:15 PM</td>
+      <td><span class="status-available">Available</span></td>
+      <td>Charlottetown Learning Centre</td>
     </tr>
     <tr>
-      <td data-label="Day">Wednesday</td>
-      <td data-label="Time">6:00 PM – 7:30 PM <span class="reserved">🚫 Reserved</span></td>
-      <td data-label="Location">📍 Stratford Public Library</td>
+      <td>Tuesday</td>
+      <td>6:00 PM – 7:30 PM</td>
+      <td><span class="status-reserved">Reserved</span></td>
+      <td>Stratford Public Library</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>6:00 PM – 7:30 PM</td>
+      <td><span class="status-reserved">Reserved</span></td>
+      <td>Stratford Public Library</td>
     </tr>
   </tbody>
 </table>
 
-<p style="margin-top: 1rem; text-align:center;"><em>Sessions are usually held in public libraries in Charlottetown and Stratford. Other days and times may be available by appointment — please inquire via the contact form.</em></p>
+<p style="margin-top: 1rem; text-align:center;"><em>Sessions are usually held in public libraries or learning centres in Charlottetown and Stratford. Other days and times may be available by appointment — please inquire via the contact form.</em></p>
 
 <p style="margin-top: 1rem; text-align:center;"><em>Most students attend one session per week, which allows for consistent progress. Extra sessions can be arranged as needed for tests, reviews, or additional support.</em></p>
 
 <p style="margin-top: 1rem; text-align:center;"><em>I offer 1.5-hour sessions to ensure enough time for concept mastery, guided practice, and meaningful progress. This format has proven most effective for math success.</em></p>
 
-  </section>  <!-- Contact and Footer sections omitted for brevity --></body>
+  </section>
+</body>
 </html>
